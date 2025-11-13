@@ -1,0 +1,123 @@
+@use '../variables' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+/* Header */
+.c-header {
+  /* altura del header reutilizable por los enlaces */
+  --header-h: clamp(56px, 10vw, 72px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: $ipsi-corporate;
+}
+
+/* Navegación principal */
+.c-nav {
+  @include container;                 /* mixin de layout */
+  display: flex;
+  gap: rem(16);
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-h);
+  padding-inline: rem(16);
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__logo {
+    display: block;
+    width: auto;
+    height: clamp(28px, 5vw, 44px);
+  }
+
+  &__toggle {
+    font-size: rem(24);
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    border: 0;
+  }
+
+  /* Menú */
+  &__menu {
+    --gap: clamp(0.5rem, 3vw, 1.25rem);
+    display: none;    /* móvil: inicialmente oculto (si usas menú desplegable) */
+    flex-direction: column;
+    gap: rem(8);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--header-h);
+    padding-inline: clamp(0.75rem, 2.5vw, 1rem);
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    transition: background-color 160ms ease;
+
+    /* Línea animada en el pie (izq→der) con color de marca de foco */
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      content: '';
+      background: $ipsi-masterbrand;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 200ms ease;
+    }
+
+    /* HOVER/FOCUS: cambia el color de FONDO */
+    &:hover,
+    &:focus-visible {
+      background-color: $ipsi-focus;
+    }
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    /* Accesibilidad focus */
+    &:focus-visible {
+      outline: 2px solid $ipsi-focus;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  }
+
+  /* Estado abierto en mobile (lo activa JS con .c-nav--open) */
+  &--open &__menu {
+    display: flex;
+  }
+}
+
+/* Layout en pantallas medianas+: menú visible en fila */
+@media (min-width: 768px) {
+  .c-nav {
+    &__toggle { display: none; }
+    &__menu {
+      display: flex !important;
+      flex-direction: row;
+      gap: var(--gap);
+      align-items: center;
+    }
+  }
+}

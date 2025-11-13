@@ -1,0 +1,24 @@
+@use 'mixins' as *;
+@use "../utilities/mixins" as *;
+
+.u-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-visually-hidden { @include visually-hidden; }
+
+.u-badge {
+  @include badge-base;
+}
+
+/* Contenedor responsive de todo el sitio */
+.o-container {
+  @include container;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}

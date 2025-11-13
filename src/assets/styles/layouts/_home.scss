@@ -1,0 +1,45 @@
+@use '../variables' as *;
+@use '../utilities/functions' as *;
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family-sans-serif;
+  font-size: rem(16);
+  line-height: 1.5;
+  color: $ipsi-corporate;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+.c-section {
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+.c-section__title {
+  margin-bottom: rem(16);
+  font-size: rem(28);
+}
+
+.c-section__title::after {
+  display: block;
+  width: rem(48);
+  height: rem(4);
+  margin-top: rem(8);
+  content: '';
+  background: $ipsi-masterbrand;
+}
+
+.c-footer {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+}

@@ -1,0 +1,56 @@
+@use '../variables' as *;
+@use '../utilities/functions' as *;
+@use "sass:color";
+
+.c-section {
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+.c-section__title {
+  margin-bottom: rem(16);
+  font-size: rem(28);
+}
+
+.c-section__title::after {
+  display: block;
+  width: rem(48);
+  height: rem(4);
+  margin-top: rem(8);
+  content: '';
+  background: $ipsi-focus;
+}
+
+.c-section--alt {
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  background:
+    linear-gradient(
+      180deg,
+      color.adjust($ipsi-focus, $lightness: 24%, $alpha: -0.85) 0%,
+      rgba(255,255,255,0) 100%
+    );
+  border-radius: 1rem;
+}
+
+.c-list {
+  padding: 0;
+  margin: clamp(1rem, 3vw, 1.5rem) 0 0;
+  list-style: none;
+
+  &--icons {
+    display: grid;
+    gap: 0.6rem;
+
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.6rem;
+      align-items: start;
+      color: rgba(0,0,0,.85);
+    }
+
+    i {
+      margin-top: 0.15rem;
+      color: $ipsi-focus;
+    }
+  }
+}

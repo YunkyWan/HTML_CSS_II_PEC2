@@ -1,0 +1,20 @@
+@use 'sass:color';
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
+$font-family-serif: 'Georgia', 'Times New Roman', serif;
+
+$ipsi-corporate: #1b2939;
+$ipsi-focus: #243751;
+$ipsi-masterbrand: #2f76e3;
+$ipsi-bg: color.scale($ipsi-masterbrand, $lightness: 70%);
+
+$mqMinWidth: 420px;
+
+$radius-md: 0.75rem;
+$radius-lg: 1rem;
+
+$space-2: 0.5rem;
+$space-4: 1rem;
+$space-6: 1.5rem;

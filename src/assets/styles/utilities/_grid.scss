@@ -1,0 +1,25 @@
+@use "../utilities/functions" as *;
+
+/* Rejilla responsive genérica */
+.o-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* móvil: 1 columna */
+  gap: clamp(1rem, 3vw, 2rem);
+
+  @media (min-width: 600px) {   /* tablets pequeñas */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (min-width: 900px) {   /* tablets/grandes */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (min-width: 1200px) {  /* escritorio */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.o-grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.o-grid--3 { /* alias para compatibilidad */
+}

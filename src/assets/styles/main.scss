@@ -1,0 +1,12 @@
+/* Import dependencies */
+@use 'variables' as *;
+@use 'dependencies';
+
+/* Import layout */
+@use 'layouts/home';
+
+/* Import Componentes */
+@use 'components' as *;
+
+/* Import Utilidades */
+@use 'utilities' as *;
