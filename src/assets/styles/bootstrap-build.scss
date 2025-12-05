@@ -1,4 +1,6 @@
-$primary: #2f76e3;
+@use "variables" as *;
+
+$primary: $ipsi-masterbrand;
 $secondary: #6c757d;
 $success: #2ca36b;
 $danger: #d64545;

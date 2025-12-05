@@ -14,10 +14,11 @@
   <main class="p-info">
     <div class="o-container">
 
-      <section class="p-info__intro">
+      <!-- INTRO / HERO INFO -->
+      <section class="p-info__intro" data-aos="fade-up">
         <div class="row align-items-center g-5 py-4">
           <!-- Columna izquierda: título, descripción y fechas -->
-          <div class="col-lg-5">
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
             <h1 class="p-info__title">
               I Jornadas de Cocina Tradicional de Ceuta
             </h1>
@@ -38,10 +39,10 @@
           </div>
 
           <!-- Columna derecha: features -->
-          <div class="col-lg-7">
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
             <div class="row row-cols-1 row-cols-sm-2 g-4">
 
-              <div class="feature col">
+              <div class="feature col" data-aos="zoom-in" data-aos-delay="0">
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center">
                   <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
                 </div>
@@ -51,7 +52,7 @@
                 </p>
               </div>
 
-              <div class="feature col">
+              <div class="feature col" data-aos="zoom-in" data-aos-delay="100">
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center">
                   <i class="fa-solid fa-utensils" aria-hidden="true"></i>
                 </div>
@@ -61,7 +62,7 @@
                 </p>
               </div>
 
-              <div class="feature col">
+              <div class="feature col" data-aos="zoom-in" data-aos-delay="200">
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center">
                   <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                 </div>
@@ -71,7 +72,7 @@
                 </p>
               </div>
 
-              <div class="feature col">
+              <div class="feature col" data-aos="zoom-in" data-aos-delay="300">
                 <div class="feature-icon d-inline-flex align-items-center justify-content-center">
                   <i class="fa-solid fa-bread-slice" aria-hidden="true"></i>
                 </div>
@@ -86,12 +87,13 @@
         </div>
       </section>
 
-
-      <article class="c-article" aria-labelledby="info-jornadas">
+      <!-- ARTÍCULO PRINCIPAL -->
+      <article class="c-article" aria-labelledby="info-jornadas" data-aos="fade-up" data-aos-offset="150">
         <div class="c-article__layout">
           <!-- Columna principal -->
           <div class="c-article__body" id="info-jornadas">
-            <figure class="c-article__figure">
+
+            <figure class="c-article__figure" data-aos="zoom-in" data-aos-delay="50">
               <img src="assets/images/platos2.jpg" alt="Sala preparada para las jornadas de cocina tradicional en Ceuta" class="c-article__img">
               <figcaption class="c-article__figcaption">
                 Demostraciones en directo y degustaciones comentadas.
@@ -111,7 +113,7 @@
               pueda llevarse ideas nuevas para su cocina diaria, sin perder de vista la raíz tradicional.
             </p>
 
-            <blockquote class="c-article__quote">
+            <blockquote class="c-article__quote" data-aos="zoom-in-up" data-aos-delay="100">
               “La cocina ceutí es un puente entre mares y culturas. Cada plato cuenta una historia”.
             </blockquote>
 
@@ -126,15 +128,17 @@
               mientras que las charlas son de acceso libre hasta completar aforo.
             </p>
 
-            <h2 class="c-article__subtitle">¿A quién van dirigidas?</h2>
-            <ul class="c-article__list">
+            <h2 class="c-article__subtitle" data-aos="fade-up" data-aos-delay="50">
+              ¿A quién van dirigidas?
+            </h2>
+            <ul class="c-article__list" data-aos="fade-up" data-aos-delay="100">
               <li>Aficionados a la cocina que quieran descubrir recetas tradicionales de Ceuta.</li>
               <li>Profesionales de hostelería interesados en actualizar su carta con sabor local.</li>
               <li>Estudiantes de cocina y pastelería.</li>
               <li>Personas curiosas que disfrutan escuchando historias alrededor de la mesa.</li>
             </ul>
 
-            <figure class="c-article__figure c-article__figure--right">
+            <figure class="c-article__figure c-article__figure--right" data-aos="zoom-in" data-aos-delay="150">
               <img src="assets/images/platos.jpg" alt="Plato tradicional ceutí emplatado" class="c-article__img">
               <figcaption class="c-article__figcaption">
                 Recetas tradicionales reinterpretadas por chefs invitados.
@@ -148,7 +152,7 @@
           </div>
 
           <!-- Columna lateral: accordion Bootstrap -->
-          <aside class="c-article__aside" aria-label="Detalles prácticos de las jornadas">
+          <aside class="c-article__aside" aria-label="Detalles prácticos de las jornadas" data-aos="fade-left" data-aos-delay="100">
             <div class="accordion" id="infoAccordion">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingPrograma">
