@@ -10,15 +10,15 @@
     }
 
     &__title {
-      font-size: clamp(2rem, 4vw, 2.4rem);
-      margin: 0 0 .5rem;
+      margin: 0 0 .75rem;
+      font-size: clamp(2.1rem, 4vw, 2.6rem);
       color: $ipsi-corporate;
     }
 
     &__lede {
-      margin: 0 0 1rem;
-      color: rgba(0, 0, 0, .75);
-      max-width: 60ch;
+      max-width: 40ch;
+      margin: 0 0 .75rem;
+      color: rgba(0, 0, 0, .8);
     }
 
     &__alert {
@@ -30,18 +30,6 @@
     margin-bottom: clamp(2rem, 6vw, 3rem);
   }
 
-  .p-info__title {
-    font-size: clamp(2.1rem, 4vw, 2.6rem);
-    margin: 0 0 .75rem;
-    color: $ipsi-corporate;
-  }
-
-  .p-info__lede {
-    margin: 0 0 .75rem;
-    color: rgba(0, 0, 0, .8);
-    max-width: 40ch;
-  }
-
   .p-info__dates {
     margin: 0 0 .5rem;
     font-weight: 500;
@@ -49,26 +37,26 @@
 
   .p-info__note {
     margin: 0;
-    color: rgba(0, 0, 0, .7);
     font-size: .95rem;
+    color: rgba(0, 0, 0, .7);
   }
 
   /* Features a la derecha */
-  .feature {
+  .c-feature {
     text-align: left;
 
     &-icon {
       width: 3.2rem;
       height: 3.2rem;
-      border-radius: 1rem;
+      margin-bottom: .75rem;
+      color: #fff;
       background: linear-gradient(
         135deg,
         color.adjust($ipsi-focus, $lightness: 6%),
         color.adjust($ipsi-focus, $lightness: -4%)
       );
-      color: #fff;
+      border-radius: 1rem;
       box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
-      margin-bottom: .75rem;
 
       i {
         font-size: 1.5rem;
@@ -76,26 +64,26 @@
     }
 
     &__title {
-      font-size: 1.05rem;
       margin: 0 0 .4rem;
+      font-size: 1.05rem;
       color: $ipsi-corporate;
     }
 
     &__text {
       margin: 0;
-      color: rgba(0, 0, 0, .75);
       font-size: .95rem;
+      color: rgba(0, 0, 0, .75);
     }
   }
 
   /* Layout general del artículo */
   .c-article {
-    container-type: inline-size;
-    container-name: article-info;
-    border-radius: 1rem;
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
     padding: clamp(1.25rem, 4vw, 1.75rem);
+    container-name: article-info;
+    container-type: inline-size;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
   }
 
   .c-article__layout {
@@ -121,9 +109,9 @@
 
   .c-article__figure {
     margin: 0;
-    border-radius: .85rem;
     overflow: hidden;
     background: #f5f5f5;
+    border-radius: .85rem;
 
     &--right {
       justify-self: end;
@@ -132,23 +120,23 @@
   }
 
   .c-article__img {
-    width: 100%;
     display: block;
+    width: 100%;
     object-fit: cover;
   }
 
   .c-article__figcaption {
-    font-size: .85rem;
     padding: .5rem .75rem;
+    font-size: .85rem;
     color: rgba(0, 0, 0, .7);
   }
 
   .c-article__quote {
-    margin: 1rem 0;
     padding: .75rem 1rem;
-    border-inline-start: 3px solid $ipsi-focus;
+    margin: 1rem 0;
     font-style: italic;
     background: rgba(0, 0, 0, .02);
+    border-inline-start: 3px solid $ipsi-focus;
   }
 
   .c-article__aside {
@@ -181,8 +169,8 @@
      Si el cuerpo del artículo contiene un blockquote,
      reforzamos el borde general para destacarlo. */
   .c-article__body:has(.c-article__quote) {
-    border-inline-start: 4px solid color.adjust($ipsi-focus, $lightness: 8%);
     padding-inline-start: .75rem;
+    border-inline-start: 4px solid color.adjust($ipsi-focus, $lightness: 8%);
   }
 
   /* :where() para suavizar la especificidad de listas y párrafos secundarios */

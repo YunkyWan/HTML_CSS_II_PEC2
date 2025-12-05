@@ -5,14 +5,14 @@
     --contact-bg: oklch(0.97 0.02 95);
     --contact-accent: oklch(0.68 0.16 260);
     --contact-accent-soft: oklch(0.91 0.04 260);
-    background: var(--contact-bg);
     min-height: 100svh;
+    background: var(--contact-bg);
   }
 
   .p-contact__hero {
-    min-height: min(40svh, 520px);
     display: flex;
     align-items: center;
+    min-height: min(40svh, 520px);
     background: radial-gradient(circle at top left,
       var(--contact-accent-soft),
       transparent 60%);
@@ -23,20 +23,20 @@
   }
 
   .p-contact__title {
-    font-size: clamp(2rem, 4vw, 2.6rem);
     margin: 0 0 0.6rem;
+    font-size: clamp(2rem, 4vw, 2.6rem);
     color: #0f172a;
   }
 
   .p-contact__lede {
+    max-width: 55ch;
     margin: 0 0 0.75rem;
     color: rgba(15, 23, 42, 0.85);
-    max-width: 55ch;
   }
 
   .p-contact__highlights {
-    margin: 0;
     padding-left: 1.2rem;
+    margin: 0;
     color: rgba(15, 23, 42, 0.9);
 
     li {
@@ -51,16 +51,16 @@
   /* Layout principal con container queries */
   .p-contact__layout {
     display: grid;
-    container-type: inline-size;
     container-name: contact-layout;
+    container-type: inline-size;
   }
 
   /* Columna izquierda: info */
   .c-contact-info {
-    background: #ffffff;
-    border-radius: 1rem;
     padding: 1.25rem 1.5rem;
     margin-bottom: 2.5rem;
+    background: #ffffff;
+    border-radius: 1rem;
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
   }
 
@@ -74,11 +74,11 @@
     margin-bottom: 0.75rem;
 
     h3 {
+      margin: 0 0 0.25rem;
       font-size: 0.95rem;
+      color: rgba(15, 23, 42, 0.75);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin: 0 0 0.25rem;
-      color: rgba(15, 23, 42, 0.75);
     }
 
     p,
@@ -94,31 +94,31 @@
   }
 
   .c-contact-info__note {
-    margin-top: 0.75rem;
     padding-top: 0.5rem;
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    margin-top: 0.75rem;
     font-size: 0.9rem;
     color: rgba(15, 23, 42, 0.75);
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
   }
 
   /* Columna derecha: formulario */
   .c-contact-form {
+    container-name: contact-form;
     /* contenedor para container queries específicas del formulario */
     container-type: inline-size;
-    container-name: contact-form;
   }
 
   .c-contact-form__inner {
+    padding: clamp(1.25rem, 4vw, 1.75rem);
     background: #ffffff;
     border-radius: 1rem;
-    padding: clamp(1.25rem, 4vw, 1.75rem);
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
   }
 
   .c-contact-form__check {
     margin-top: 0.25rem;
 
-    .form-check-input:checked {
+    .c-contact-form__form-check-input:checked {
       background-color: var(--contact-accent);
       border-color: var(--contact-accent);
     }
@@ -127,11 +127,11 @@
   .c-contact-form__actions {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 0.4rem;
+    align-items: flex-start;
     margin-top: 0.5rem;
 
-    .btn {
+    .c-contact-form__btn {
       padding-inline: 1.5rem;
     }
   }
@@ -164,7 +164,7 @@
 
   /* Pequeña demo de unidad cap para el alto de las etiquetas flotantes,
      (a efectos de PEC, simplemente demuestra uso) */
-  .form-floating > label {
+  .c-contact-form__form-floating > label {
     line-height: 3cap;
   }
 }

@@ -45,22 +45,22 @@ h1, h2, h3 {
 
 @layer pages {
   .p-home {
+
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    align-items: flex-start;
     width: 100%;
-    margin: 0;
-    padding: clamp(1.5rem, 4vw, 2.5rem);
     min-height: 100vh;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    margin: 0;
+
+    color: #fff;
 
     /* 👉 Cambia esta ruta por tu foto real */
     background:
       linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15)),
       url("../images/fondo.jpg") no-repeat center/cover;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: clamp(1rem, 3vw, 1.5rem);
-
-    color: #fff;
   }
 
   .p-home__logo {
@@ -71,8 +71,8 @@ h1, h2, h3 {
   .p-home__header h1 {
     margin: 0;
     font-size: clamp(1.8rem, 5vw, 2.6rem);
-    text-transform: uppercase;
     line-height: 1.1;
+    text-transform: uppercase;
   }
 
   .p-home__header h2 {
@@ -86,20 +86,20 @@ h1, h2, h3 {
   }
 
   .p-home__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 
     li {
       width: min(100%, 320px);
-      background: rgba(212, 117, 159, 0.9);
       padding: 0.85rem 0.9rem;
-      border-radius: 0.5rem;
       line-height: 1.25;
       overflow-wrap: anywhere;
+      background: rgba(212, 117, 159, 0.9);
+      border-radius: 0.5rem;
     }
 
     h3 {
@@ -121,17 +121,17 @@ h1, h2, h3 {
   }
 
   .p-home__cta {
-    margin-top: 0.5rem;
     width: min(100%, 300px);
     padding: 0.9rem 1rem;
-    border-radius: 0.6rem;
+    margin-top: 0.5rem;
     background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.6rem;
 
     h4 {
       margin: 0 0 0.35rem;
       font-size: 0.95rem;
-      text-transform: uppercase;
       color: #ffd274;
+      text-transform: uppercase;
     }
 
     p {
@@ -141,19 +141,19 @@ h1, h2, h3 {
   }
 
   .p-home__support {
+    max-width: 420px;
     margin-top: auto;
     font-size: 0.75rem;
-    max-width: 420px;
     opacity: 0.85;
   }
 
   /* Ayuda para lectores de pantalla */
   .u-visually-hidden {
     position: absolute !important;
-    height: 1px;
     width: 1px;
+    height: 1px;
     overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
   }
 }
 
@@ -178,16 +178,16 @@ h1, h2, h3 {
 
     /* Logo abajo a la izquierda, tamaño fijo pero dentro de grid */
     .p-home__logo {
-      grid-column: 1 / 4;
       grid-row: 8 / span 2;
+      grid-column: 1 / 4;
       align-self: end;
       justify-self: flex-start;
     }
 
     /* Títulos arriba a la izquierda */
     .p-home__header {
-      grid-column: 1 / 6;
       grid-row: 1 / span 2;
+      grid-column: 1 / 6;
       align-self: end;
 
       h1 {
@@ -201,8 +201,8 @@ h1, h2, h3 {
 
     /* Eventos como grid interno, sin posiciones locas */
     .p-home__events {
-      grid-column: 4 / 13;
       grid-row: 3 / 11;
+      grid-column: 4 / 13;
       align-self: start;
     }
 
@@ -236,8 +236,8 @@ h1, h2, h3 {
 
     /* CTA flotando en el lado derecho */
     .p-home__cta {
-      grid-column: 8 / 13;
       grid-row: 1 / 3;
+      grid-column: 8 / 13;
       align-self: start;
       justify-self: end;
       max-width: 260px;
@@ -256,8 +256,8 @@ h1, h2, h3 {
       }
 
       .p-home__events {
-        grid-column: 2 / 9;
         grid-row: 3 / 11;
+        grid-column: 2 / 9;
       }
 
       .p-home__list {
@@ -265,13 +265,13 @@ h1, h2, h3 {
       }
 
       .p-home__cta {
-        grid-column: 5 / 9;
         grid-row: 1 / 3;
+        grid-column: 5 / 9;
       }
 
       .p-home__logo {
-        grid-column: 1 / 3;
         grid-row: 9 / span 2;
+        grid-column: 1 / 3;
       }
     }
 
