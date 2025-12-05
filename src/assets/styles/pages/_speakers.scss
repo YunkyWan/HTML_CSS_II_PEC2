@@ -1,0 +1,75 @@
+@use "sass:color";
+@use "../variables" as *;
+
+/* PAGE: SPEAKERS (capa pages desde main.scss) */
+.p-speakers {
+  padding-block: clamp(2rem, 6vw, 3rem);
+
+  &__header {
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    text-align: center;
+  }
+
+  &__title { font-size: clamp(1.8rem, 3vw, 2.2rem); margin: 0; }
+  &__lede  { color: rgba(0,0,0,.7); margin: .25rem 0 1rem; }
+
+  &__toolbar {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* FLEX GRID propia (no usar .row/.col- de Bootstrap) */
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    align-items: stretch;
+  }
+}
+
+/* Tarjeta BEM específica de speakers (reutiliza tu estilo de card si quieres) */
+.c-speaker {
+  flex: 1 1 260px;        /* base responsiva */
+  max-width: 360px;       /* evita tarjetas enormes */
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+  container-type: inline-size; /* 🔸 container queries por tarjeta */
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(0,0,0,.12);
+  }
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__body {
+    display: grid;
+    gap: .5rem;
+    padding: 1rem;
+  }
+
+  &__name { margin: 0; font-size: clamp(1.1rem, 2vw, 1.3rem); color: $ipsi-corporate; }
+  &__meta { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0; }
+  &__desc { margin: 0; color: rgba(0,0,0,.75); }
+}
+
+/* 🔶 Container queries: cuando la tarjeta es ancha, enriquecer layout */
+@container (min-width: 320px) {
+  .c-speaker__body { grid-template-rows: auto auto 1fr auto; }
+  .c-speaker__desc { font-size: 0.95rem; }
+}
+
+@container (min-width: 420px) {
+  .c-speaker__name { font-size: 1.4rem; }
+  .c-speaker__desc { font-size: 1rem; }
+}

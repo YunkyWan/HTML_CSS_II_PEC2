@@ -1,12 +1,15 @@
-/* Import dependencies */
 @use 'variables' as *;
 @use 'dependencies';
-
-/* Import layout */
 @use 'layouts/home';
-
-/* Import Componentes */
 @use 'components' as *;
-
-/* Import Utilidades */
 @use 'utilities' as *;
+
+@use "pages/speakers";
+@use "pages/info";
+@use "pages/contact";
+
+@layer reset, vendor, components, utilities, pages;
+
+@layer vendor {
+  @import "bootstrap-build";
+}

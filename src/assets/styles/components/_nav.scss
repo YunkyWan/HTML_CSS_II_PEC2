@@ -21,17 +21,55 @@
   justify-content: space-between;
   min-height: var(--header-h);
   padding-inline: rem(16);
+  color: #fff;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.75rem;
+  }
 
   &__brand {
     display: inline-flex;
     align-items: center;
+    gap: 0.8rem;
     text-decoration: none;
+    color: inherit;
+    min-width: 0; // permite que el texto haga wrap si hace falta
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: none;
+    }
   }
 
   &__logo {
+    flex-shrink: 0;
+    width: clamp(2.4rem, 6vw, 3.4rem);
+    height: auto;
     display: block;
-    width: auto;
-    height: clamp(28px, 5vw, 44px);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    white-space: nowrap; // en pantallas pequeñas luego dejamos que rompa
+  }
+
+  &__title-line1 {
+    font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__title-line2 {
+    font-size: clamp(0.8rem, 1.7vw, 0.95rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
 
   &__toggle {
@@ -119,5 +157,15 @@
       gap: var(--gap);
       align-items: center;
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .c-nav__inner {
+    gap: 0.5rem;
+  }
+
+  .c-nav__title {
+    white-space: normal; // permitimos que la segunda línea rompa
   }
 }

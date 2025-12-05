@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./assets/styles/main.scss" />
+  <script type="module" src="./assets/scripts/main.js"></script>
+  <title>Participantes</title>
+</head>
+<body class="u-bg">
+  <include src="views/header.html"></include>
+
+
+  <main class="p-speakers">
+    <div class="o-container">
+      <header class="p-speakers__header">
+        <h1 class="p-speakers__title">Participantes en las I Jornadas de cocina tradicional</h1>
+        <p class="p-speakers__lede">Ponentes, talleres y cursos de cocina tradicional.</p>
+
+        <!-- Toolbar con componentes Bootstrap -->
+        <div class="p-speakers__toolbar" data-bs-theme="light">
+          <div class="btn-group" role="group" aria-label="Filtrar">
+            <button type="button" class="btn btn-outline-primary btn-sm" data-filter="all">Todo</button>
+            <button type="button" class="btn btn-outline-primary btn-sm" data-filter="charla">Charlas</button>
+            <button type="button" class="btn btn-outline-primary btn-sm" data-filter="taller">Talleres</button>
+            <button type="button" class="btn btn-outline-primary btn-sm" data-filter="curso">Cursos</button>
+          </div>
+        </div>
+      </header>
+
+
+      <section class="p-speakers__grid">
+
+        <article class="c-speaker" data-type="charla">
+          <img class="c-speaker__img" src="assets/images/ponencia.svg" alt="Chef Aixa" />
+          <div class="c-speaker__body">
+            <h2 class="c-speaker__name">Chef Aixa</h2>
+            <p class="c-speaker__meta">
+              <span class="badge text-bg-primary">Charla</span>
+              <span class="badge text-bg-secondary">Cocina sefardí</span>
+            </p>
+            <p class="c-speaker__desc">Tradición y técnicas de la cocina sefardí en el Estrecho.</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-aixa">
+              Ver ficha
+            </button>
+          </div>
+        </article>
+
+        <article class="c-speaker" data-type="taller">
+          <img class="c-speaker__img" src="assets/images/taller.svg" alt="Juan Benítez" />
+          <div class="c-speaker__body">
+            <h2 class="c-speaker__name">Juan Benítez</h2>
+            <p class="c-speaker__meta">
+              <span class="badge text-bg-primary">Taller</span>
+              <span class="badge text-bg-success">Arroces del Estrecho</span>
+            </p>
+            <p class="c-speaker__desc">Arroces marineros: fondos, sofritos y punto del grano.</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-juan">
+              Ver ficha
+            </button>
+          </div>
+        </article>
+
+        <article class="c-speaker" data-type="curso">
+          <img class="c-speaker__img" src="assets/images/curso.svg" alt="M. Zahra" />
+          <div class="c-speaker__body">
+            <h2 class="c-speaker__name">M. Zahra</h2>
+            <p class="c-speaker__meta">
+              <span class="badge text-bg-primary">Curso</span>
+              <span class="badge text-bg-danger">Dulces árabes</span>
+            </p>
+            <p class="c-speaker__desc">Curso intensivo: almíbares, masas y frutos secos.</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-zahra">
+              Ver ficha
+            </button>
+          </div>
+        </article>
+
+        <article class="c-speaker" data-type="charla">
+          <img class="c-speaker__img" src="assets/images/ponencia.svg" alt="Chef Aixa" />
+          <div class="c-speaker__body">
+            <h2 class="c-speaker__name">Chef Aixa</h2>
+            <p class="c-speaker__meta">
+              <span class="badge text-bg-primary">Taller</span>
+              <span class="badge text-bg-secondary">Cocina lenta</span>
+            </p>
+            <p class="c-speaker__desc">La cocina lenta mantiene las propiedades de los alimentos.</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-aixa">
+              Ver ficha
+            </button>
+          </div>
+        </article>
+
+        <article class="c-speaker" data-type="charla">
+          <img class="c-speaker__img" src="assets/images/ponencia.svg" alt="Chef Aixa" />
+          <div class="c-speaker__body">
+            <h2 class="c-speaker__name">Hugo Ruiz</h2>
+            <p class="c-speaker__meta">
+              <span class="badge text-bg-primary">Charla</span>
+              <span class="badge text-bg-secondary">Cocina de Fusión</span>
+            </p>
+            <p class="c-speaker__desc">Tradición y cultura se unen mezclando nuevos estilos en el Estrecho.</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-aixa">
+              Ver ficha
+            </button>
+          </div>
+        </article>
+
+        <article class="c-speaker" data-type="curso">
+          <img class="c-speaker__img" src="assets/images/curso.svg" alt="M. Zahra" />
+          <div class="c-speaker__body">
+            <h2 class="c-speaker__name">Rafael Lima</h2>
+            <p class="c-speaker__meta">
+              <span class="badge text-bg-primary">Curso</span>
+              <span class="badge text-bg-danger">Pastelería</span>
+            </p>
+            <p class="c-speaker__desc">Descubriendo los secretos de la pasteleria de Ceuta que cuenta con una larga tradición.</p>
+            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-zahra">
+              Ver ficha
+            </button>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Modales Bootstrap (uno por participante, simple y válido para la PEC) -->
+  <div class="modal fade" id="modal-aixa" tabindex="-1" aria-labelledby="modal-aixa-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modal-aixa-label">Chef Aixa — Ficha</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          Técnicas de cocina sefardí, historia y producto local. Degustación incluida.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="#" class="btn btn-primary">Inscribirme</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-juan" tabindex="-1" aria-labelledby="modal-juan-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modal-juan-label">Juan Benítez — Ficha</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          Taller práctico: caldos base, fumets y emplatado de arroces marineros.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="#" class="btn btn-primary">Inscribirme</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-zahra" tabindex="-1" aria-labelledby="modal-zahra-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modal-zahra-label">M. Zahra — Ficha</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          Curso intensivo de dulcería árabe tradicional. Técnicas, ingredientes y conservación.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="#" class="btn btn-primary">Inscribirme</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <include src="views/footer.html"></include>
+
+
+</body>
+</html>

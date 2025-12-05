@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./assets/styles/main.scss" />
+  <script type="module" src="./assets/scripts/main.js"></script>
+  <title>Contacto</title>
+</head>
+<body class="u-bg">
+  <include src="views/header.html"></include>
+
+
+  <main class="p-contact">
+
+    <!-- HERO / INTRO -->
+    <section class="p-contact__hero" data-aos="fade-up">
+      <div class="o-container">
+        <div class="p-contact__hero-inner">
+          <div class="p-contact__hero-text">
+            <h1 class="p-contact__title">Contacto e inscripciones</h1>
+            <p class="p-contact__lede">
+              ¿Quieres apuntarte a un taller, curso o tienes alguna duda sobre las
+              I Jornadas de cocina tradicional de Ceuta? Rellena el formulario
+              y el equipo de organización se pondrá en contacto contigo.
+            </p>
+
+            <ul class="p-contact__highlights">
+              <li>Inscripción a talleres y cursos.</li>
+              <li>Consultas sobre accesibilidad y horarios.</li>
+              <li>Propuestas de colaboración y medios.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL: INFO + FORMULARIO -->
+    <section class="p-contact__content" data-aos="fade-up">
+      <div class="o-container">
+        <div class="p-contact__layout">
+
+          <h2 class="c-section__title">Información práctica</h2>
+          <aside class="c-contact-info" aria-label="Información de contacto">
+
+            <div class="c-contact-info__block">
+              <h3>Ubicación</h3>
+              <p>
+                <strong>Centro Cultural de Ceuta</strong><br>
+                Sala de conferencias y aulas de cocina.
+              </p>
+            </div>
+
+            <div class="c-contact-info__block">
+              <h3>Horario de las jornadas</h3>
+              <p>
+                Viernes: 17:00 – 21:00  y  Sábados: 10:00 – 14:00
+              </p>
+            </div>
+
+            <div class="c-contact-info__block">
+              <h3>Contacto directo</h3>
+              <p>
+                Correo: <a href="mailto:jornadascocina@ceuta.es">jornadascocina@ceuta.es</a><br>
+                Teléfono: <a href="tel:+34956000000">956 000 000</a>
+              </p>
+            </div>
+
+            <div class="c-contact-info__note">
+              <p>
+                Las plazas de los talleres son limitadas. Recibirás un correo de
+                confirmación si obtienes plaza.
+              </p>
+            </div>
+          </aside>
+
+          <h2 class="c-section__title">Formulario de contacto</h2>
+          <section class="c-contact-form" aria-label="Formulario de contacto">
+
+            <form name="contacto-jornadas" method="POST" data-netlify="true" class="c-contact-form__inner needs-validation" novalidate>
+              <input type="hidden" name="form-name" value="contacto-jornadas" />
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="contactName"
+                      name="nombre"
+                      placeholder="Tu nombre"
+                      required
+                    />
+                    <label for="contactName">Nombre</label>
+                    <div class="invalid-feedback">
+                      Indica tu nombre.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="contactEmail"
+                      name="email"
+                      placeholder="nombre@ejemplo.com"
+                      required
+                    />
+                    <label for="contactEmail">Correo electrónico</label>
+                    <div class="invalid-feedback">
+                      Introduce un correo válido.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <select
+                      class="form-select"
+                      id="contactType"
+                      name="tipo"
+                      required
+                    >
+                      <option value="" selected disabled>Selecciona una opción</option>
+                      <option value="charla">Consulta general / Charlas</option>
+                      <option value="taller">Inscripción a talleres</option>
+                      <option value="curso">Inscripción a cursos</option>
+                      <option value="colaboracion">Propuesta de colaboración</option>
+                    </select>
+                    <label for="contactType">Motivo del mensaje</label>
+                    <div class="invalid-feedback">
+                      Selecciona un motivo.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="contactSubject"
+                      name="asunto"
+                      placeholder="Asunto"
+                    />
+                    <label for="contactSubject">Asunto (opcional)</label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      id="contactMessage"
+                      name="mensaje"
+                      placeholder="Cuéntanos en qué podemos ayudarte"
+                      style="min-height: 9rem;"
+                      required
+                    ></textarea>
+                    <label for="contactMessage">Mensaje</label>
+                    <div class="invalid-feedback">
+                      Escribe un breve mensaje.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check c-contact-form__check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="si"
+                      id="contactPrivacy"
+                      required
+                    />
+                    <label class="form-check-label" for="contactPrivacy">
+                      Acepto el uso de mis datos para la gestión de la inscripción.
+                    </label>
+                    <div class="invalid-feedback">
+                      Debes aceptar para poder enviar el formulario.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 c-contact-form__actions">
+                  <button type="submit" class="btn btn-primary">
+                    Enviar mensaje
+                  </button>
+                  <p class="c-contact-form__help">
+                    Recibirás una copia del mensaje en tu correo.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <include src="views/footer.html"></include>
+
+
+</body>
+</html>

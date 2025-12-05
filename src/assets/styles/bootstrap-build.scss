@@ -1,0 +1,15 @@
+$primary: #2f76e3;
+$secondary: #6c757d;
+$success: #2ca36b;
+$danger: #d64545;
+$body-font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+// botones algo más redondeados y cómodos
+$btn-border-radius: .65rem;
+$btn-padding-y: .6rem;
+$btn-padding-x: 1rem;
+
+// badges ligeramente más grandes
+$badge-font-size: .85rem;
+
+@import "bootstrap/scss/bootstrap";

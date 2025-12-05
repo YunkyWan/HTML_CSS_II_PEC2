@@ -1,0 +1,170 @@
+@use "../variables" as *;
+
+@layer pages {
+  .p-contact {
+    --contact-bg: oklch(0.97 0.02 95);
+    --contact-accent: oklch(0.68 0.16 260);
+    --contact-accent-soft: oklch(0.91 0.04 260);
+    background: var(--contact-bg);
+    min-height: 100svh;
+  }
+
+  .p-contact__hero {
+    min-height: min(40svh, 520px);
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top left,
+      var(--contact-accent-soft),
+      transparent 60%);
+  }
+
+  .p-contact__hero-inner {
+    max-width: 70ic; /* usa unidad ic: ancho basado en “0” del font */
+  }
+
+  .p-contact__title {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin: 0 0 0.6rem;
+    color: #0f172a;
+  }
+
+  .p-contact__lede {
+    margin: 0 0 0.75rem;
+    color: rgba(15, 23, 42, 0.85);
+    max-width: 55ch;
+  }
+
+  .p-contact__highlights {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: rgba(15, 23, 42, 0.9);
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .p-contact__content {
+    padding-block: clamp(2rem, 5svh, 3rem);
+  }
+
+  /* Layout principal con container queries */
+  .p-contact__layout {
+    display: grid;
+    container-type: inline-size;
+    container-name: contact-layout;
+  }
+
+  /* Columna izquierda: info */
+  .c-contact-info {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  }
+
+  .c-contact-info__title {
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
+    color: $ipsi-corporate;
+  }
+
+  .c-contact-info__block {
+    margin-bottom: 0.75rem;
+
+    h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0 0 0.25rem;
+      color: rgba(15, 23, 42, 0.75);
+    }
+
+    p,
+    ul {
+      margin: 0;
+      color: rgba(15, 23, 42, 0.85);
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      li { margin-bottom: 0.15rem; }
+    }
+  }
+
+  .c-contact-info__note {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    font-size: 0.9rem;
+    color: rgba(15, 23, 42, 0.75);
+  }
+
+  /* Columna derecha: formulario */
+  .c-contact-form {
+    /* contenedor para container queries específicas del formulario */
+    container-type: inline-size;
+    container-name: contact-form;
+  }
+
+  .c-contact-form__inner {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: clamp(1.25rem, 4vw, 1.75rem);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  }
+
+  .c-contact-form__check {
+    margin-top: 0.25rem;
+
+    .form-check-input:checked {
+      background-color: var(--contact-accent);
+      border-color: var(--contact-accent);
+    }
+  }
+
+  .c-contact-form__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+
+    .btn {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  .c-contact-form__help {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(15, 23, 42, 0.7);
+  }
+
+  /* Container queries: cuando el layout es ancho, 2 columnas */
+  @container contact-layout (min-width: 768px) {
+    .p-contact__layout {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+      align-items: flex-start;
+    }
+  }
+
+  /* Container queries: cuando el formulario tiene espacio suficiente,
+     ajusta paddings y tamaño de texto */
+  @container contact-form (min-width: 520px) {
+    .c-contact-form__inner {
+      padding: 1.75rem 2rem;
+    }
+
+    .c-contact-form__help {
+      font-size: 0.95rem;
+    }
+  }
+
+  /* Pequeña demo de unidad cap para el alto de las etiquetas flotantes,
+     (a efectos de PEC, simplemente demuestra uso) */
+  .form-floating > label {
+    line-height: 3cap;
+  }
+}
